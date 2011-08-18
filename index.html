@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script src="/js/jquery.js"></script>
+
+
+<script src="http://code.google.com/apis/gears/gears_init.js"></script>
+<script src="http://better-geolocation-api.googlecode.com/files/geolocation.js"></script>
+
+<script src="jquery.geolocation.js"></script>
+
+<script>
+
+$(function() {
+
+	function showMyPosition(position) {
+		$('.result:eq(0)').html("Your position is: " + position.coords.latitude + ", " + position.coords.longitude + " (Timestamp: "  + position.timestamp + ")<br />" + $('.result:eq(0)').html());
+	}
+
+	function watchMyPosition(position) {
+		$('.result:eq(1)').html("Your position is: " + position.coords.latitude + ", " + position.coords.longitude + " (Timestamp: "  + position.timestamp + ")<br />" + $('.result:eq(1)').html());
+	}
+	 
+	function noLocation(error) {
+		$('#geo').text("No location info available. Error code: " + error.code);
+	}
+	 
+	$('#getPositionButton').bind('click', function() {
+		$.geolocation.get({win: showMyPosition, fail: noLocation});
+	});
+	 
+	$('#watchPositionButton').bind('click', function() {
+		if(typeof myPosition != 'undefined') {
+			alert('Already watching, mate!');
+		} else {
+			myPosition = $.geolocation.watch({win: watchMyPosition}); 
+		}
+	});
+	 
+	$('#stopButton').bind('click', function() {
+		if(typeof myPosition != 'undefined') {
+			alert('Stopping to watch position (watch id ' + myPosition +')');
+			$.geolocation.stop(myPosition);
+			delete(myPosition);
+		} else {
+			alert('Nothing to stop at this point. Click the "watch" button first.');
+		}
+	});
+
+});
+</script>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: white;
+	color: #333;
+	font-family: "Trebuchet MS", Arial, Helvetica, Sans-Serif;
+	font-size: 15px;
+	line-height: 24px;
+}
+
+section {
+	display: block;
+}
+
+h1, h2, h3 {
+	font-family: "Georgia", serif;
+	font-weight: normal;
+}
+
+h2, h3 {
+	margin: 1em 0 0 0;
+}
+
+h1 {
+	font-size: 200%;
+}
+
+h2 {
+	font-size: 130%;
+}
+
+h3 {
+	font-size: 110%;
+	font-style: italic;
+}
+
+p {
+	margin: 0.75em 0;
+}
+
+#wrapper {
+	padding: 16px;
+}
+
+.result {
+	height: 100px;
+	overflow: auto;
+	display: inline-block;
+}
+
+#col1 {
+	float: left;
+}
+
+#col2 {
+	float: left;
+}
+</style>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+	<section id="col1">
+		<img src="earth.png" alt="" title="Björn Lindberg, CC BY-NC-ND 3.0" style="float: left; margin-right: 15px;" />
+	</section>
+
+	<section id="col2">
+
+		<h1>jQuery Geolocation API simplification</h1>
+
+		<h2>Single position acquisition</h2>
+		<p>
+			<button id="getPositionButton">Get</button>
+		</p>
+		<div class="result"></div>
+
+		<h2>Observe changes of your position</h2>
+		</p>
+			<button id="watchPositionButton">Watch</button>
+			<button id="stopButton">Stop</button>
+		</p>
+
+		<div class="result"></div>
+
+	</section>
+
+</div>
+
+</body>
+</html>
