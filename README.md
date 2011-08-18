@@ -1,3 +1,5 @@
+# jQuery Geolocation
+
 A small jQuery plugin which acts as a simplification of the [Geolocation API](http://dev.w3.org/geo/api/spec-source.html).
 
 Instead of using navigator.geolocation.getCurrentPosition you can now just use the jQuery methods `$.geolocation.get()` or `$.geolocation.watch()`.
@@ -27,7 +29,7 @@ Get the current position of the user
 	</li>
 	<li>
 		<strong>options</strong>
-		Options for the geolocation request
+		Options for the geolocation request<br />
 			• enableHighAccuracy<br />
 			• maximumAge<br />
 			• timeout
@@ -84,7 +86,7 @@ Returns: watchID (Integer)
 	</li>
 	<li>
 		<strong>settings</strong>
-		Options for the geolocation request
+		Options for the geolocation request<br />
 			• enableHighAccuracy<br />
 			• maximumAge<br />
 			• timeout
@@ -117,7 +119,7 @@ Returns: watchID (Integer)
 </ul>
 
 
-### Examples
+## Examples
 <pre>function alertMyPosition(position) {
 	alert("Your position is " + position.coords.latitude + ", " + position.coords.longitude);
 }
@@ -139,5 +141,5 @@ $('#stopButton').bind('click', function() {
 	$.geolocation.stop(myPosition);
 });</pre>
 
-<h3>Demo</h3>
+## Demo
 [You can find a demo here](http://manuel-bieh.de/publikationen/scripts/jquery/geolocation/)
