@@ -6,15 +6,15 @@ Contrary to the standard API the only parameter the functions expect is a JSON o
 
 You can also use `$.geolocation.getCurrentPosition(success, error, options)` to get native API feeling if this makes you happier. In conjunction with my Geolocation API polyfill script this also works with some non-standard Geolocation APIs like Google Gears or Blackberry Location.
 
-== Usage
+## Usage
 
-=== $.geolocation.clearWatch(integer watchID)
+### $.geolocation.clearWatch(integer watchID)
 Stops tracking of the user for the according watchID.
 
-=== $.geolocation.get(object config)
+### $.geolocation.get(object config)
 Get the current position of the user
 
-==== Config properties
+#### Config properties
 
 <ul>
 	<li>
@@ -45,10 +45,10 @@ Get the current position of the user
 </ul>
 
 
-=== $.geolocation.getCurrentPosition(callback success, callback error, object settings)
+### $.geolocation.getCurrentPosition(callback success, callback error, object settings)
 Get the current position of the user (API standard behavior)
 
-==== Parameters
+#### Parameters
 
 <strong>success</strong> Function to call if geolocation request was successful
 <strong>error</strong> Function to call if geolocation request failed
@@ -59,20 +59,20 @@ Get the current position of the user (API standard behavior)
 	<li>timeout</li>
 </ul>
 
-=== $.geolocation.stop(integer watchID)
+### $.geolocation.stop(integer watchID)
 
 Stops tracking of the user for the according watchID.
 
-=== $.geolocation.stopAll()
+### $.geolocation.stopAll()
 
 Stops all running watchPosition callbacks.
 
-=== $.geolocation.watch(object config)
+### $.geolocation.watch(object config)
 
 Track the movement of the user
 Returns: watchID (Integer)
 
-==== Config properties
+#### Config properties
 
 <ul>
 	<li>
@@ -103,12 +103,12 @@ Returns: watchID (Integer)
 </ul>
 
 
-=== $.geolocation.watchPosition(callback success, callback error, object settings)
+### $.geolocation.watchPosition(callback success, callback error, object settings)
 
 Track the movement of the user (API standard behavior)
 Returns: watchID (Integer)
 
-==== Parameters
+#### Parameters
 
 <strong>success</strong> Function to call if geolocation request was successful
 <strong>error</strong> Function to call if geolocation request failed
@@ -120,7 +120,7 @@ Returns: watchID (Integer)
 </ul>
 
 
-=== Examples
+### Examples
 <pre>function alertMyPosition(position) {
 	alert("Your position is " + position.coords.latitude + ", " + position.coords.longitude);
 }
