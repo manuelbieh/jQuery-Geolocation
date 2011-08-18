@@ -28,11 +28,11 @@ Get the current position of the user
 	<li>
 		<strong>options</strong>
 		Options for the geolocation request
-		<ul>
-			<li>enableHighAccuracy</li>
-			<li>maximumAge</li>
-			<li>timeout</li>
-		</ul>
+
+			* enableHighAccuracy
+			* maximumAge
+			* timeout
+
 	</li>
 	<li>
 		<strong>success</strong><br />
@@ -86,11 +86,11 @@ Returns: watchID (Integer)
 	<li>
 		<strong>settings</strong>
 		Options for the geolocation request
-		<ul>
-			<li>enableHighAccuracy</li>
-			<li>maximumAge</li>
-			<li>timeout</li>
-		</ul>
+
+			* enableHighAccuracy
+			* maximumAge
+			* timeout
+
 	</li>
 	<li>
 		<strong>success</strong><br />
