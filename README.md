@@ -28,11 +28,9 @@ Get the current position of the user
 	<li>
 		<strong>options</strong>
 		Options for the geolocation request
-
-			* enableHighAccuracy
-			* maximumAge
-			* timeout
-
+			• enableHighAccuracy<br />
+			• maximumAge<br />
+			• timeout
 	</li>
 	<li>
 		<strong>success</strong><br />
@@ -50,9 +48,10 @@ Get the current position of the user (API standard behavior)
 
 #### Parameters
 
-<strong>success</strong> Function to call if geolocation request was successful
-<strong>error</strong> Function to call if geolocation request failed
+<strong>success</strong> Function to call if geolocation request was successful<br />
+<strong>error</strong> Function to call if geolocation request failed<br />
 <strong>options</strong> Options for the geolocation request
+
 <ul>
 	<li>enableHighAccuracy</li>
 	<li>maximumAge</li>
@@ -86,11 +85,9 @@ Returns: watchID (Integer)
 	<li>
 		<strong>settings</strong>
 		Options for the geolocation request
-
-			* enableHighAccuracy
-			* maximumAge
-			* timeout
-
+			• enableHighAccuracy<br />
+			• maximumAge<br />
+			• timeout
 	</li>
 	<li>
 		<strong>success</strong><br />
@@ -110,8 +107,8 @@ Returns: watchID (Integer)
 
 #### Parameters
 
-<strong>success</strong> Function to call if geolocation request was successful
-<strong>error</strong> Function to call if geolocation request failed
+<strong>success</strong> Function to call if geolocation request was successful<br />
+<strong>error</strong> Function to call if geolocation request failed<br />
 <strong>options</strong> Options for the geolocation request
 <ul>
 	<li>enableHighAccuracy</li>
