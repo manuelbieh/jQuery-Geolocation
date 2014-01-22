@@ -4,7 +4,7 @@
 * @author: Manuel Bieh
 * @url: http://www.manuel-bieh.de/
 * @documentation: http://www.manuel-bieh.de/blog/geolocation-jquery-plugin
-* @version 1.0.49
+* @version 1.0.50
 * @license MIT
 */
 
@@ -57,7 +57,6 @@
 			getPosition: function(o) {
 				o = jQuery.geolocation.prepareOptions(o);
 				$.geolocation.getCurrentPosition(o.success, o.error, o.options);
-
 			},
 
 			prepareOptions: function(o) {
@@ -76,6 +75,8 @@
 
 				if(!!o.win != false) {
 					o.success = o.win;
+				} else if(!!o.done != false) {
+					o.success = o.done;
 				}
 
 				if(!!o.fail != false) {
