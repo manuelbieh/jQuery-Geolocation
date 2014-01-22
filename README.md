@@ -143,3 +143,6 @@ $('#stopButton').bind('click', function() {
 
 ## Demo
 [You can find a demo here](http://manuel-bieh.de/publikationen/scripts/jquery/geolocation/)
+
+## TODO:
+Make use of deferreds/promises
