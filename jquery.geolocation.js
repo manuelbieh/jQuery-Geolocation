@@ -4,12 +4,11 @@
 * @author: Manuel Bieh
 * @url: http://www.manuel-bieh.de/
 * @documentation: http://www.manuel-bieh.de/blog/geolocation-jquery-plugin
-* @published: 2011-05-29
-* @version 1.0.48
+* @version 1.0.49
 * @license MIT
 */
 
-(function($){
+(function($) {
 
 	$.extend({
 
