@@ -6,5 +6,8 @@
   "ignore": [
     "earth.png",
     "index.html"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "1.6.0"
+  }
 }
