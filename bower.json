@@ -1,7 +1,7 @@
 {
   "name": "jQuery-Geolocation",
-  "version": "1.0.50",
-  "description": "A small jQuery plugin which acts as a simplification of the Geolocation API.",
+  "version": "1.1.0",
+  "description": "jQuery plugin which acts as a simplification of the Geolocation API.",
   "license": "MIT",
   "ignore": [
     "earth.png",
