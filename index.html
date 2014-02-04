@@ -6,11 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<script src="/js/jquery.js"></script>
-
-
-<script src="http://code.google.com/apis/gears/gears_init.js"></script>
-<script src="http://better-geolocation-api.googlecode.com/files/geolocation.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
 <script src="jquery.geolocation.js"></script>
 
@@ -27,14 +23,18 @@ $(function() {
 	}
 	 
 	function noLocation(error) {
-		$('#geo').text("No location info available. Error code: " + error.code);
+		$('.result:eq(0)').html("No location info available. Error code: <br>" + JSON.stringify(error));
 	}
 	 
-	$('#getPositionButton').bind('click', function() {
-		$.geolocation.get({win: showMyPosition, fail: noLocation});
+	$('#getPositionButton').on('click', function() {
+		$.geolocation.get({success: showMyPosition, error: noLocation});
 	});
-	 
-	$('#watchPositionButton').bind('click', function() {
+
+	$('#getPositionButtonDef').on('click', function() {
+		$.geolocation.get().done(showMyPosition).fail(noLocation);
+	});
+
+	$('#watchPositionButton').on('click', function() {
 		if(typeof myPosition != 'undefined') {
 			alert('Already watching, mate!');
 		} else {
@@ -42,7 +42,7 @@ $(function() {
 		}
 	});
 	 
-	$('#stopButton').bind('click', function() {
+	$('#stopButton').on('click', function() {
 		if(typeof myPosition != 'undefined') {
 			alert('Stopping to watch position (watch id ' + myPosition +')');
 			$.geolocation.stop(myPosition);
@@ -99,6 +99,10 @@ p {
 	margin: 0.75em 0;
 }
 
+button {
+	padding: 8px;
+}
+
 #wrapper {
 	padding: 16px;
 }
@@ -109,13 +113,10 @@ p {
 	display: inline-block;
 }
 
-#col1 {
+#col1, #col2 {
 	float: left;
 }
 
-#col2 {
-	float: left;
-}
 </style>
 
 </head>
@@ -134,6 +135,7 @@ p {
 		<h2>Single position acquisition</h2>
 		<p>
 			<button id="getPositionButton">Get</button>
+			<button id="getPositionButtonDef">Get (deferred)</button>
 		</p>
 		<div class="result"></div>
 

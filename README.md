@@ -141,6 +141,14 @@ $('#stopButton').bind('click', function() {
 	$.geolocation.stop(myPosition);
 });</pre>
 
+## Deferreds
+
+<strong>New in 1.1.0:</strong>
+jQuery Deferreds are now supported for `get` and `getCurrentPosition`. Just use:
+`$.geolocation.get().done(successCallback).fail(errorCallback);`
+
+<strong>Attention:</strong> Deferreds support is in beta state.
+
 ## Demo
 [You can find a demo here](http://manuel-bieh.de/publikationen/scripts/jquery/geolocation/)
 
