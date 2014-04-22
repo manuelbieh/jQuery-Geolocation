@@ -151,6 +151,3 @@ jQuery Deferreds are now supported for `get` and `getCurrentPosition`. Just use:
 
 ## Demo
 [You can find a demo here](http://manuel-bieh.de/publikationen/scripts/jquery/geolocation/)
-
-## TODO:
-Make use of deferreds/promises
