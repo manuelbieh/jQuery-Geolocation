@@ -128,16 +128,16 @@ function noLocation(error) {
 	alert("No location info available. Error code: " + error.code);
 }
 
-$('#getPositionButton').bind('click', function() {
+$('#getPositionButton').on('click', function() {
 	$.geolocation.get({win: alertMyPosition, fail: noLocation});
 });
 
-$('#watchPositionButton').bind('click', function() {
+$('#watchPositionButton').on('click', function() {
 	// alertMyPosition is called each time the user's position changes
 	myPosition = $.geolocation.watch({win: alertMyPosition}); 
 });
 
-$('#stopButton').bind('click', function() {
+$('#stopButton').on('click', function() {
 	$.geolocation.stop(myPosition);
 });</pre>
 
