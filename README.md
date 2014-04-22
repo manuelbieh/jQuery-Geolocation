@@ -4,7 +4,7 @@ A small jQuery plugin which acts as a simplification of the [Geolocation API](ht
 
 Instead of using navigator.geolocation.getCurrentPosition you can now just use the jQuery methods `$.geolocation.get()` or `$.geolocation.watch()`.
 
-Contrary to the standard API the only parameter the functions expect is a JSON object with three properties in no particular order: success, error, options. For success and error you can also use their alias properties "win" and "fail": `$.geolocation.get({win: function() {}, fail: function() {}, options);`
+Contrary to the standard API the only parameter the functions expect is an object with three properties in no particular order: `success`, `error`, `options`. For `success` and `error` you can also use their alias properties `win` (or `done`) and `fail`: `$.geolocation.get({win: function() {}, fail: function() {}, options);`
 
 You can also use `$.geolocation.getCurrentPosition(success, error, options)` to get native API feeling if this makes you happier. In conjunction with my Geolocation API polyfill script this also works with some non-standard Geolocation APIs like Google Gears or Blackberry Location.
 
